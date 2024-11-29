@@ -1,0 +1,401 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Main background color */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    background-image: url('login.jpg');  /* Replace with the actual path to your image */
+    background-size: cover;  /* Ensures the image covers the entire page */
+    background-position: center;  /* Centers the background image */
+    background-repeat: no-repeat;
+}
+
+header {
+    background: transparent; /* Removed blue background */
+    color: #ffffff; /* Changed text color to ensure visibility */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: hsl(285, 15%, 95%); /* Changed link color to match the text */
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    text-align: center;
+}
+
+section {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgb(204, 154, 221);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff; /* Button background */
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.pose {
+    margin-bottom: 15px;
+}
+
+.pose img {
+    max-width: 100%;
+    height: auto;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#user-input {
+    margin-top: 10px;
+    padding: 5px;
+    width: 80%;
+}
+
+/* Login Page Styles */
+.login-page {
+    background: rgb(204, 154, 221);
+    background-color: rgb(195, 151, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height for login page */
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect to the background */
+}
+
+/* Input Fields */
+input {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}
+
+#main-content {
+    display: none;
+    padding: 20px;
+}
+
+/* Health Tracking and Exercise Styles */
+#health-tracking, #exercise-session, #games {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#timer {
+    margin-top: 10px;
+}
+
+/* Chatbot Message Styles */
+#chatbot-messages {
+    margin-top: 20px;
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.bot-message {
+    background-color: #007bff;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.user-message {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+/* Styling for Chat Input Field */
+#chat-input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Send Button Styling */
+button {
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Game Specific Styling */
+#snake-ladder-game,
+#ludo-game,
+#tic-tac-toe-game,
+#hangman-game {
+    margin-top: 20px;
+}
+
+#snake-ladder-game button,
+#ludo-game button,
+#tic-tac-toe-game button,
+#hangman-game button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#snake-ladder-game button:hover,
+#ludo-game button:hover,
+#tic-tac-toe-game button:hover,
+#hangman-game button:hover {
+    background-color: #0056b3;
+}
+
+/* Snake and Ladder Board */
+#snake-ladder-game table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+#snake-ladder-game td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#snake-ladder-game td.snake {
+    background-color: red;
+}
+
+#snake-ladder-game td.ladder {
+    background-color: green;
+}
+
+/* Exercise Timer */
+#exercise-session {
+    margin-top: 20px;
+}
+
+#exercise-session label {
+    font-size: 16px;
+}
+
+#timer p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Custom Gaming Section Styles */
+.container {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#gameButton {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#gameButton:hover {
+    background-color: #005f73;
+}
+
+.game-list {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.game-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.game-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.game-item img:hover {
+    transform: scale(1.1);
+}
+
+.game-item p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.game-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.game-item a:hover p {
+    color: #008CBA;
+}
+
+/* Health Tracking Styles */
+#health-tracking {
+    background: rgb(204, 154, 221);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+#health-tracking label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+#health-tracking input[type="number"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#health-tracking button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#health-tracking button:hover {
+    background-color: #45a049;
+}
+
+#reminder-message {
+    margin-top: 10px;
+    color: green;
+    font-size: 16px;
+}
+
+/* Adjustments for Login Page */
+#login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent; /* Removed blue background */
+}
+
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+#error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

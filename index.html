@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughtful Therapy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login-page" class="login-page">
+        <div class="login-container">
+            <h2>Login to Stress Buster</h2>
+            <form id="login-form" onsubmit="return handleLogin(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="error-message" class="error-message" style="display:none;">Invalid username or password!</p>
+            <a href="#" id="register-link" onclick="showRegistrationPage()">Don't have an account? Register here.</a>
+        </div>
+    </div>
+
+    <!-- Registration Page -->
+    <div id="registration-page" style="display: none;">
+        <div class="registration-container">
+            <h2>Register for Stress Bruster</h2>
+            <form id="register-form" onsubmit="return handleRegister(event)">
+                <label for="new-username">Username:</label>
+                <input type="text" id="new-username" name="username" required>
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p id="register-error-message" class="error-message" style="display:none;">Username already exists!</p>
+            <a href="#" id="back-to-login" onclick="showLoginPage()">Already have an account? Login here.</a>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden initially) -->
+    <div id="main-content" style="display:none;">
+        <header>
+            <h1>Welcome to Stress Buster</h1>
+            <nav>
+                <ul>
+                    <li><a href="#gaming" onclick="toggleGamesSection()">Gaming Section</a></li>
+                    <li><a href="#exercise" onclick="toggleExercisePoses()">Exercise Section</a></li>
+                    <li><a href="#menstrual-health" onclick="toggleMenstrualHealth()">Menstrual Health</a></li>
+                    <li><a href="#health-tracking" onclick="toggleHealthTracking()">Health Tracking</a></li>
+                    <li><a href="#chatbot" onclick="toggleChatbot()">Chatbot</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Gaming Section -->
+        <section id="gaming">
+            <h2>Gaming Section for People with Depression</h2>
+            <p>Engage in simple and easy games designed to uplift your mood and relax.</p>
+            <button id="gameButton">Show Available Games</button>
+            
+            <div id="gameList" class="game-list">
+                <div class="game-item">
+                    <a href="https://flappybird.io" target="_blank">
+                        <img src="flappy bird.jpg" alt="Flappy Bird Logo">
+                        <p>Flappy Bird</p>
+                    </a>
+                </div>
+                <div class="game-item">
+                    <a href="https://tetris.com/play-tetris" target="_blank">
+                        <img src="tetris.jpg" alt="Tetris Logo">
+                        <p>Tetris</p>
+                    </a>
+                </div>
+                <div class="game-item">
+                    <a href="https://solitaire-web.com" target="_blank">
+                        <img src="solitaire.jpg" alt="Solitaire Logo">
+                        <p>Solitaire</p>
+                    </a>
+                </div>
+                <div class="TIC-TAC_TOE">
+                    <body>
+                        <div class="container">
+                            <h1>Advanced Tic-Tac-Toe</h1>
+                            <div class="game-mode">
+                                <button id="player-vs-player">Player vs Player</button>
+                                <button id="player-vs-computer">Player vs Computer</button>
+                            </div>
+                            <div id="board" class="board">
+                                <!-- 9 cells for Tic-Tac-Toe -->
+                                <div class="cell" data-cell></div>
+                                <div class="cell" data-cell></div>
+                                <div class="cell" data-cell></div>
+                                <div class="cell" data-cell></div>
+                                <div class="cell" data-cell></div>
+                                <div class="cell" data-cell></div>
+                                <div class="cell" data-cell></div>
+                                <div class="cell" data-cell></div>
+                                <div class="cell" data-cell></div>
+                            </div>
+                            <div id="message" class="message">
+                                <p id="winner-message"></p>
+                                <button id="restart">Restart</button>
+                            </div>
+                        </div>
+                        <script src="script.js"></script>
+                    </body>
+                    </html>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercise Section -->
+        <section id="exercise">
+            <h2>Exercise Section for Older Adults</h2>
+            <p>Select an exercise, then set a start and stop time.</p>
+            <select id="exercise-selector">
+                <option value="Chair Pose">Chair Pose</option>
+                <option value="Wall Push-Up">Wall Push-Up</option>
+                <option value="Standing Leg Lift">Standing Leg Lift</option>
+                <option value="Seated Torso Twist">Seated Torso Twist</option>
+                <option value="Neck Stretch">Neck Stretch</option>
+            </select>
+
+            <div>
+                <label for="start-time">Start Time:</label>
+                <input type="time" id="start-time">
+                <label for="stop-time">Stop Time:</label>
+                <input type="time" id="stop-time">
+                <button onclick="startExercise()">Start Exercise</button>
+                <button onclick="pauseExercise()" id="pause-button" style="display:none;">Pause</button>
+                <button onclick="resumeExercise()" id="resume-button" style="display:none;">Resume</button>
+            </div>
+
+            <div id="timer" style="display:none;">
+                <h3>Timer: <span id="time-display">00:00</span></h3>
+            </div>
+
+            <div id="exercise-poses" class="exercise-poses" style="display: none;">
+                <div class="pose">
+                    <img src="chair.jpg" alt="Chair Pose">
+                    <h3>Chair Pose</h3>
+                    <p>Stand in front of a chair. Lower your body as if you are going to sit down. Hold for 10 seconds.</p>
+                </div>
+                <div class="pose">
+                    <img src="wall_push_up.jpg" alt="Wall Push-Up">
+                    <h3>Wall Push-Up</h3>
+                    <p>Stand an arm's length from a wall. Place your palms on the wall and bend your elbows to lean in, then push back out.</p>
+                </div>
+                <div class="pose">
+                    <img src="standing_leg_lift.jpg" alt="Standing Leg Lift">
+                    <h3>Standing Leg Lift</h3>
+                    <p>Stand tall and lift one leg to the side. Hold for a few seconds and switch to the other leg.</p>
+                </div>
+                <div class="pose">
+                    <img src="seated_torso_twist.jpg" alt="Seated Torso Twist">
+                    <h3>Seated Torso Twist</h3>
+                    <p>Sit in a chair, place your right hand on the back of the chair, and twist your torso to the right. Hold for 10 seconds, then switch sides.</p>
+                </div>
+                <div class="pose">
+                    <img src="neck_stretch.jpg" alt="Neck Stretch">
+                    <h3>Neck Stretch</h3>
+                    <p>Sit or stand up straight. Gently tilt your head to one side, holding for 10 seconds. Switch sides.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menstrual Health Section -->
+        <section id="menstrual-health" style="display:none;">
+            <h2>Menstrual Health and Wellness</h2>
+            <p>Manage your menstrual symptoms and prioritize self-care.</p>
+            <div>
+                <h3>Tips for Comfort</h3>
+                <ul>
+                    <li>Stay hydrated with water and herbal teas.</li>
+                    <li>Engage in light exercises like walking or stretching.</li>
+                    <li>Practice relaxation techniques such as deep breathing or yoga.</li>
+                    <li>Consider tracking your symptoms to identify patterns.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Period Tracker</h3>
+                <label for="period-start">Start Date:</label>
+                <input type="date" id="period-start">
+                <label for="period-end">End Date:</label>
+                <input type="date" id="period-end">
+                <button onclick="setPeriod()">Set Period Dates</button>
+                <div id="period-message" style="display:none;"></div>
+            </div>
+        </section>
+
+        <!-- Health Tracking Section -->
+        <section id="health-tracking" style="display:none;">
+            <h2>Health Tracking</h2>
+            <p>Set reminders to take care of your health.</p>
+            <div>
+                <label><input type="checkbox" id="drink-water" value="Drink Water"> Drink Water</label><br>
+                <label><input type="checkbox" id="take-medication" value="Take Medication"> Take Medication</label><br>
+                <label><input type="checkbox" id="stretch" value="Stretch"> Stretch</label><br>
+            </div>
+            <div>
+                <label for="reminder-time">Set Time for Reminder (in minutes):</label>
+                <input type="number" id="reminder-time" min="1" required>
+                <button onclick="setReminder()">Set Reminder</button>
+                <div id="reminder-message" style="display:none;"></div>
+            </div>
+        </section>
+
+        <!-- Chatbot Section -->
+        <section id="chatbot" style="display:none;">
+            <h2>Chatbot Assistance</h2>
+            <button onclick="startChatbot()">Start Chat</button>
+            <div id="chatbot-messages" style="height: 300px; overflow-y: scroll; padding: 10px; border: 1px solid #ccc; margin-top: 20px;"></div>
+            <input type="text" id="chat-input" placeholder="Ask a question..." style="width: 80%; padding: 10px; margin-top: 10px;">
+            <button onclick="sendChatMessage()" style="padding: 10px;">Send</button>
+        </section>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
